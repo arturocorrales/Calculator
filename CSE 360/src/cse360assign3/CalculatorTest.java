@@ -51,7 +51,11 @@ public class CalculatorTest {
 	@Test
 	public void testGetHistory() {
 		Calculator eData = new Calculator();
-		assertEquals("", eData.getHistory());
+		eData.add(2);
+		eData.subtract(5);
+		eData.multiply(6);
+		eData.divide(2);
+		assertEquals("0 + 2 - 5 * 6 / 2", eData.getHistory());
 	}
 
 }

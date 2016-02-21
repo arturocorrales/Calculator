@@ -1,12 +1,14 @@
 package cse360assign3;
 
 /**
- * 
+ * Class that adds, subtracts, multiplies, and divides values like a Calculator 
+ * https://github.com/arturocorrales/Calculator.git
  * @author Arturo Corrales CSE 360 PIN: 221
  */
 public class Calculator {
 
 	private int total;
+	private String history = "0";
 	
 	/** Constructor for Calculator*/
 	public Calculator () {
@@ -27,6 +29,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	/**
@@ -35,6 +38,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
@@ -43,6 +47,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	/**
@@ -55,6 +60,8 @@ public class Calculator {
 			total = 0;
 		else
 			total = total/value;
+		
+		history = history + " / " + value;
 	}
 	
 	/**
@@ -62,6 +69,6 @@ public class Calculator {
 	 * @return
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
